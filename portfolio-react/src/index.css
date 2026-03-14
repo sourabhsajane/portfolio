@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #050510;
+  --bg2: #0a0a1a;
+  --card: #0f0f2a;
+  --accent: #00ffff;
+  --accent2: #7b2fff;
+  --accent3: #ff2d78;
+  --text: #e0e0ff;
+  --text2: #8888aa;
+  --green: #00ff88;
+  --font-code: 'Fira Code', monospace;
+  --font-main: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent2);
+  border-radius: 3px;
+}
+
+.section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-family: var(--font-code);
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.glow {
+  text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 40px var(--accent);
+}
+
+.glow-purple {
+  text-shadow: 0 0 10px var(--accent2), 0 0 20px var(--accent2);
+}

@@ -1,0 +1,39 @@
+.bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.dev-scene {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 560px;
+  height: 520px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.3));
+  animation: devFloat 6s ease-in-out infinite;
+}
+
+.dev-svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes devFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@media (max-width: 768px) {
+  .dev-scene {
+    width: 320px;
+    height: 300px;
+    opacity: 0.12;
+  }
+}

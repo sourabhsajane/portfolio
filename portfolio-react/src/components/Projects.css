@@ -1,0 +1,96 @@
+.projects-section {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent, rgba(123,47,255,0.05), transparent);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--p-color), transparent);
+}
+
+.project-num {
+  font-family: var(--font-code);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.04);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  line-height: 1;
+}
+
+.project-icon-wrap {
+  width: 55px;
+  height: 55px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--p-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--p-color);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--p-color) 30%, transparent);
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+
+.project-desc {
+  color: var(--text2);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.p-tag {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--p-color);
+  color: var(--p-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-family: var(--font-code);
+  font-size: 0.78rem;
+}
+
+.project-glow {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--p-color) 15%, transparent), transparent 70%);
+  pointer-events: none;
+}
