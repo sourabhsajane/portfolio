@@ -81,7 +81,7 @@ export default function Hero() {
           <a href="#contact" className="btn btn-primary">
             <i className="fas fa-terminal"></i> Contact Me
           </a>
-          <a href="../Sourabh_Resume.pdf" download className="btn btn-secondary">
+          <a href="/portfolio/Sourabh_Resume.pdf" download className="btn btn-secondary">
             <i className="fas fa-download"></i> Download Resume
           </a>
         </motion.div>
