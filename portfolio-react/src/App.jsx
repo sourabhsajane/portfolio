@@ -38,12 +38,7 @@ function App() {
       {/* Interactive Custom Follower Cursor */}
       <CustomCursor />
 
-      {/* Ambient Glowing Color Orbs */}
-      <div className="ambient-glow ambient-glow-1" />
-      <div className="ambient-glow ambient-glow-2" />
-      <div className="ambient-glow ambient-glow-3" />
-
-      {/* Cyber Canvas Background */}
+      {/* Interactive Cyber Nebula & Neural Lattice Background */}
       <CodingBackground />
 
       {/* Fixed Floating Glass Navbar */}

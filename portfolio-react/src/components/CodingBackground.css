@@ -1,39 +1,421 @@
-.bg-canvas {
+.cyber-background-container {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
   pointer-events: none;
-  opacity: 1;
+  overflow: hidden;
 }
 
-.dev-scene {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 560px;
-  height: 520px;
+/* Sci-Fi Digital Matrix Grid with Cursor Spotlight */
+.cyber-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 245, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle 580px at var(--mouse-x, 50%) var(--mouse-y, 35%), rgba(0, 0, 0, 0.85) 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle 580px at var(--mouse-x, 50%) var(--mouse-y, 35%), rgba(0, 0, 0, 0.85) 0%, transparent 80%);
+  pointer-events: none;
   z-index: 0;
+}
+
+/* Deep Nebula Aurora Waves */
+.cyber-aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
   pointer-events: none;
   opacity: 0.22;
-  filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.3));
-  animation: devFloat 6s ease-in-out infinite;
+  will-change: transform;
+  z-index: 0;
 }
 
-.dev-svg {
+.cyber-aurora-cyan {
+  width: min(650px, 85vw);
+  height: min(650px, 85vw);
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.85) 0%, transparent 70%);
+  top: -120px;
+  right: -80px;
+  animation: auroraPulse1 22s ease-in-out infinite alternate;
+}
+
+.cyber-aurora-purple {
+  width: min(720px, 90vw);
+  height: min(720px, 90vw);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.85) 0%, transparent 70%);
+  bottom: -60px;
+  left: -120px;
+  animation: auroraPulse2 26s ease-in-out infinite alternate-reverse;
+}
+
+.cyber-aurora-pink {
+  width: min(480px, 70vw);
+  height: min(480px, 70vw);
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.75) 0%, transparent 70%);
+  top: 42%;
+  right: 8%;
+  animation: auroraPulse3 18s ease-in-out infinite alternate;
+}
+
+@keyframes auroraPulse1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-60px, 80px, 0) scale(1.15); }
+}
+
+@keyframes auroraPulse2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(80px, -70px, 0) scale(1.18); }
+}
+
+@keyframes auroraPulse3 {
+  0% { transform: translate3d(0, 0, 0) scale(0.95); opacity: 0.15; }
+  100% { transform: translate3d(-40px, -40px, 0) scale(1.15); opacity: 0.25; }
+}
+
+/* Passionate Coder Ambient Background Hologram */
+.bg-coder-backdrop {
+  position: absolute;
+  top: 48%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: min(650px, 52vw);
+  height: min(650px, 52vw);
+  max-height: 80vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.32;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+  animation: bgCoderFloat 12s ease-in-out infinite alternate;
+  mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.6) 55%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.6) 55%, transparent 80%);
+}
+
+.bg-coder-glow-aura {
+  position: absolute;
+  inset: -15%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.28) 0%, rgba(139, 92, 246, 0.2) 40%, transparent 70%);
+  filter: blur(55px);
+  z-index: 0;
+}
+
+.bg-coder-img {
+  position: relative;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  filter: contrast(1.1) brightness(1.08) drop-shadow(0 0 45px rgba(0, 245, 255, 0.3));
+  z-index: 1;
 }
 
-@keyframes devFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+.bg-coder-scanlines {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 245, 255, 0.06) 50%, transparent 100%);
+  background-size: 100% 6px;
+  z-index: 2;
+  opacity: 0.5;
 }
 
-@media (max-width: 768px) {
-  .dev-scene {
+.bg-coder-badge {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 15, 30, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 245, 255, 0.35);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--cyan);
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.bg-coder-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: hudDotPulse 1.8s infinite;
+}
+
+@keyframes bgCoderFloat {
+  0% {
+    transform: translateY(-50%) translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translateY(-50%) translate3d(-15px, 20px, 0) scale(1.03);
+  }
+}
+
+/* Main Interactive Canvas */
+.cyber-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------- */
+/* Floating Holographic Tech Widgets (Developer HUD)   */
+/* ---------------------------------------------------- */
+.holo-widget {
+  position: absolute;
+  background: rgba(8, 14, 30, 0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 245, 255, 0.24);
+  border-radius: 14px;
+  padding: 12px 15px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  line-height: 1.55;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 245, 255, 0.08);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.42;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.holo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 7px;
+  margin-bottom: 8px;
+}
+
+.holo-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.holo-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.holo-title {
+  color: var(--text-secondary, #94a3b8);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.holo-icon {
+  font-size: 0.82rem;
+  color: var(--cyan, #00f5ff);
+}
+
+.holo-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+.holo-badge-purple {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.35);
+  color: #a78bfa;
+}
+
+.holo-badge-cyan {
+  background: rgba(0, 245, 255, 0.15);
+  border-color: rgba(0, 245, 255, 0.35);
+  color: #38bdf8;
+}
+
+.holo-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00f5ff;
+  box-shadow: 0 0 8px #00f5ff;
+  animation: hudDotPulse 1.8s infinite;
+}
+
+.holo-code p {
+  margin: 1px 0;
+  color: #cbd5e1;
+}
+
+.c-cyan { color: #38bdf8; }
+.c-purple { color: #c084fc; }
+.c-pink { color: #f472b6; }
+.c-green { color: #34d399; }
+.c-muted { color: #64748b; font-size: 0.68rem; font-style: italic; }
+
+/* Positioning Holographic Widgets Across Viewport */
+.holo-terminal {
+  top: 95px;
+  left: 28px;
+  width: 320px;
+  animation: floatHolo1 8s ease-in-out infinite;
+}
+
+.holo-git {
+  top: 130px;
+  right: 28px;
+  width: 330px;
+  animation: floatHolo2 9s ease-in-out infinite;
+}
+
+.holo-react {
+  bottom: 85px;
+  left: 28px;
+  width: 300px;
+  animation: floatHolo3 10s ease-in-out infinite;
+}
+
+.holo-db {
+  bottom: 85px;
+  right: 28px;
+  width: 310px;
+  animation: floatHolo4 8.5s ease-in-out infinite;
+}
+
+@keyframes floatHolo1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(0.8deg); }
+}
+
+@keyframes floatHolo2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(-0.8deg); }
+}
+
+@keyframes floatHolo3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(12px) rotate(-0.7deg); }
+}
+
+@keyframes floatHolo4 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(14px) rotate(0.7deg); }
+}
+
+/* Corner Telemetry HUD */
+.cyber-hud {
+  position: absolute;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: rgba(0, 245, 255, 0.35);
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hud-top-left {
+  top: 22px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: hudDotPulse 2s infinite ease-in-out;
+}
+
+@keyframes hudDotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hud-bottom-left {
+  bottom: 22px;
+  left: 28px;
+  color: rgba(148, 163, 184, 0.35);
+}
+
+/* Responsive Scaling: Prevent HUD Clutter on Laptops & Tablets */
+@media (max-width: 1440px) {
+  .holo-widget {
+    opacity: 0.28;
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 1200px) {
+  .holo-terminal,
+  .holo-git {
+    display: none;
+  }
+  .holo-react,
+  .holo-db {
+    opacity: 0.2;
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 1024px) {
+  .bg-coder-backdrop {
+    width: min(500px, 85vw);
+    height: min(500px, 85vw);
+    right: 50%;
+    transform: translate(50%, -50%);
+    opacity: 0.22;
+  }
+}
+
+@media (max-width: 900px) {
+  .holo-widget,
+  .cyber-hud {
+    display: none;
+  }
+  .cyber-grid-overlay {
+    background-size: 42px 42px;
+  }
+  .cyber-aurora {
+    opacity: 0.16;
+    filter: blur(90px);
+  }
+}
+
+@media (max-width: 640px) {
+  .bg-coder-backdrop {
     width: 320px;
-    height: 300px;
-    opacity: 0.12;
+    height: 320px;
+    opacity: 0.18;
+  }
+  .bg-coder-badge {
+    font-size: 0.62rem;
+    padding: 4px 10px;
   }
 }

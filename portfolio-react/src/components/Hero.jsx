@@ -143,17 +143,17 @@ export default function Hero() {
 
             <div className="floating-chip chip-node">
               <i className="fas fa-leaf"></i>
-              <span>Java & Spring Boot</span>
+              <span>Java &amp; Spring Boot</span>
             </div>
 
             <div className="floating-chip chip-db">
               <i className="fas fa-database"></i>
-              <span>MySQL & Supabase</span>
+              <span>MySQL &amp; Supabase</span>
             </div>
 
             <div className="floating-chip chip-cert">
               <i className="fas fa-robot"></i>
-              <span>GenAI & Prompt Eng.</span>
+              <span>GenAI &amp; Prompt Eng.</span>
             </div>
 
             {/* 3D Interaction Cue */}
