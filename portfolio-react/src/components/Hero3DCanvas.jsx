@@ -252,14 +252,16 @@ export default function Hero3DCanvas() {
   return (
     <div
       ref={mountRef}
+      className="hero-3d-canvas-container"
       style={{
         width: '100%',
         height: '100%',
-        minHeight: '420px',
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        touchAction: 'pan-y',
+        pointerEvents: 'none',
       }}
     />
   )
