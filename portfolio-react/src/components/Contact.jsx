@@ -74,8 +74,8 @@ export default function Contact() {
           {/* Left Column: Direct Links & Info */}
           <motion.div
             className="contact-info-col"
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
             {/* Quick Email Card */}
@@ -189,8 +189,8 @@ export default function Contact() {
           {/* Right Column: Interactive Message Form */}
           <motion.div
             className="contact-form-col"
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="form-card glass-card">

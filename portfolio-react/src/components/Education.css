@@ -5,8 +5,10 @@
 
 .edu-cert-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 36px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .col-heading {
@@ -213,8 +215,10 @@
 
 @media (max-width: 1024px) {
   .edu-cert-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 30px;
+    width: 100%;
+    max-width: 100%;
   }
 }
 

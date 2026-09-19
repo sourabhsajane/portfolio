@@ -94,8 +94,8 @@ export default function Education() {
                 <motion.div
                   key={edu.degree}
                   className="timeline-item"
-                  initial={{ opacity: 0, x: -40 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: idx * 0.2 }}
                 >
                   {/* Timeline Glowing Node */}
@@ -160,8 +160,8 @@ export default function Education() {
               {credentialsData.map((cert, idx) => (
                 <motion.div
                   key={cert.title}
-                  initial={{ opacity: 0, x: 40 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: idx * 0.18 }}
                 >
                   <TiltCard maxTilt={8} className="cert-tilt-card">

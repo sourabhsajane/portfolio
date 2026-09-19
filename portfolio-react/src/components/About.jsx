@@ -53,7 +53,11 @@ export const developer: FullStackDeveloper = {
   ]
 };`,
   'TechStack.json': `{
-  "programmingLanguages": ["Java", "JavaScript", "C"],
+  "programmingLanguages": [
+    "Java",
+    "JavaScript",
+    "C"
+  ],
   "frontendDevelopment": [
     "React.js",
     "HTML5",
@@ -134,9 +138,9 @@ export default function About() {
           {/* Left Column: Interactive IDE */}
           <motion.div
             className="ide-container"
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
           >
             <div className="ide-window glass-card">
               {/* Window Header */}
@@ -191,9 +195,9 @@ export default function About() {
           {/* Right Column: Bio & Quick Facts */}
           <motion.div
             className="about-bio-col"
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
             <div className="bio-card glass-card">
               <h3 className="bio-heading">

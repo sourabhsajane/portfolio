@@ -48,7 +48,8 @@
 }
 
 html, body, #root {
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -315,7 +316,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .section {
-    padding: 65px 16px;
+    padding: 60px 16px;
+    width: 100%;
+    max-width: 100%;
   }
   .section-header {
     margin-bottom: 2.2rem;
@@ -332,7 +335,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
   .section {
-    padding: 50px 14px;
+    padding: 48px 12px;
+    width: 100%;
+    max-width: 100%;
   }
   .status-pill {
     font-size: 0.75rem;
