@@ -1,4 +1,61 @@
-.app {
+.app-root {
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Floating Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(10, 16, 32, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 14px 30px rgba(0, 245, 255, 0.25);
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.15s ease-out;
+}
+
+.scroll-top-arrow {
+  font-size: 0.88rem;
+  color: var(--cyan);
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .scroll-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+  .progress-ring {
+    width: 42px;
+    height: 42px;
+  }
 }

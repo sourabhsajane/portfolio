@@ -1,61 +1,175 @@
 .skills-section {
   position: relative;
-  z-index: 1;
-  background: linear-gradient(180deg, transparent, rgba(0,255,255,0.03), transparent);
+  z-index: 2;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-card {
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-top: 2px solid var(--card-color);
-  border-radius: 12px;
-  padding: 1.8rem;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-.skill-header {
+/* Recruiter Stack Highlights Banner */
+.skills-recruiter-banner {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.2rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 18px 28px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--border-glass-strong);
+  margin-bottom: 2.5rem;
+  gap: 16px;
 }
 
-.skill-header i {
+.recruiter-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.recruiter-stat-item i {
   font-size: 1.4rem;
 }
 
-.skill-header h3 {
-  font-family: var(--font-code);
-  font-size: 1rem;
-  color: var(--text);
-}
-
-.skill-tags {
+.recruiter-stat-item div {
   display: flex;
+  flex-direction: column;
+}
+
+.recruiter-stat-item strong {
+  font-size: 0.96rem;
+  color: var(--text-primary);
+}
+
+.recruiter-stat-item span {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.recruiter-stat-sep {
+  width: 1px;
+  height: 36px;
+  background: var(--border-glass);
+}
+
+.text-cyan { color: var(--cyan); }
+.text-purple { color: var(--purple); }
+.text-green { color: var(--emerald); }
+
+/* Filter Row */
+.skills-filter-row {
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 8px;
+  margin-bottom: 2.5rem;
 }
 
-.skill-tag {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-family: var(--font-code);
-  font-size: 0.8rem;
-  color: var(--card-color);
-  cursor: default;
-  transition: all 0.2s;
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.skill-tag:hover {
-  background: var(--card-color);
-  color: var(--bg);
+.filter-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 245, 255, 0.3);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+  border-color: var(--cyan);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.2);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.skill-tilt-card {
+  border-radius: 18px;
+  height: 100%;
+}
+
+.skill-card-body {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.skill-tilt-card:hover .skill-card-body {
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  background: rgba(17, 24, 39, 0.88);
+}
+
+/* Top Bar */
+.skill-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.skill-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-type-pill {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid;
+  padding: 4px 11px;
+  border-radius: 9999px;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+/* Title & Desc */
+.skill-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.skill-desc {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .recruiter-stat-sep {
+    display: none;
+  }
+  .skills-recruiter-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
